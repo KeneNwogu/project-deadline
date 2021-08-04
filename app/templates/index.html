@@ -4,7 +4,13 @@
             <form method="get">
                 <input name="start-date" type="date">
                 <input name="deadline" type="number">
-                <input name="time-format" type="text">
+                <select>
+                    {% for option in options %}
+                    <option>
+                        {{ option }}
+                    </option>
+                    {% endfor %}
+                </select>
                 <input type="submit">
             </form>
         </div>

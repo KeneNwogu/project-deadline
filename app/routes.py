@@ -9,6 +9,7 @@ from deadline.deadline import get_deadline
 @app.route("/deadline")
 @app.route("/")
 def get_deadline_info():
+    time_format_options = ['weeks', 'months']
     start_date = request.args.get('start-date')
     if start_date:
         start_date = request.args.get('start-date').replace('-', ' ')
@@ -24,4 +25,4 @@ def get_deadline_info():
             deadline_information = get_deadline(start_date, deadline)
             deadline_information_json = json.dumps(deadline_information)
             return Response(deadline_information_json)
-    return render_template("index.html")
+    return render_template("index.html", options=time_format_options)
