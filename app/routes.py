@@ -9,7 +9,9 @@ from deadline.deadline import get_deadline
 @app.route("/deadline")
 @app.route("/")
 def get_deadline_info():
-    start_date = request.args.get('start-date').replace('-', ' ')
+    start_date = request.args.get('start-date')
+    if start_date:
+        start_date = request.args.get('start-date').replace('-', ' ')
     deadline = request.args.get('deadline')
     time_format = request.args.get('time-format')
     if start_date and deadline:
