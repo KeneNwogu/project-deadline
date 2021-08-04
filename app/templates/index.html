@@ -4,7 +4,7 @@
             <form method="get">
                 <input name="start-date" type="date" required>
                 <input name="deadline" type="number" placeholder="Deadline period" required>
-                <select>
+                <select name="time-format">
                     {% for option in options %}
                     <option>
                         {{ option }}
